@@ -1,0 +1,19 @@
+// These colors are specific to the theme. Do not use in a package!
+
+//spin the colorwheel here!
+@base-hue: 210;
+@spin-value: 120; //default value: 120
+@grayness: 75%; //default value: 75%
+
+@base: hsv(@base-hue, 100%, 100%);
+@anti: spin(@base, 180);
+@full-l-spin: spin(@base, -@spin-value);
+@full-r-spin: spin(@base, @spin-value);
+@half-l-spin: spin(@base, -@spin-value/2);
+@half-r-spin: spin(@base, @spin-value/2);
+
+@gray: desaturate(@base, @grayness);
+@anti-gray: desaturate(@anti, @grayness);
+
+@excelling-color: mix(@anti, hsv(120 * floor(hue(@anti) / 120) + 60, 100%, 100%));
+@highlight-color: mix(@base, hsv(120 * floor(hue(@base) / 120) + 60, 100%, 100%));
